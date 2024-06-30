@@ -1,0 +1,122 @@
+---
+
+---
+
+<header>
+  <div class="header-wrapper">
+    <img class="header-logo" src="/logo-mobile.svg" alt="Logo" />
+    <nav class="header-nav">
+      <ul class="header-nav__ul">
+        <li>Home</li>
+        <li>Sobre</li>
+        <li>Serviços</li>
+        <li>Contato</li>
+      </ul>
+    </nav>
+    <button class="header-menu__button" id="btnMenuMobile">
+      <img
+        class="header-menu__icon"
+        src="/icons/menu.svg"
+        alt="Samantha Dutra Logo"
+      />
+    </button>
+  </div>
+</header>
+
+<style lang="scss">
+  header {
+    padding: 1rem;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .header-logo {
+    width: 45px;
+  }
+
+  .header-nav {
+    display: none;
+
+    .header-nav__ul {
+      display: flex;
+      gap: 2.34vw;
+    }
+  }
+
+  .header-menu__button {
+    border: none;
+    background: none;
+    padding: 0.5rem;
+    cursor: pointer;
+
+    .header-menu__icon {
+      width: 35px;
+      filter: invert(25%) sepia(34%) saturate(822%) hue-rotate(207deg)
+        brightness(92%) contrast(92%);
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    .header-nav {
+      display: block;
+    }
+  }
+</style>
+<script>
+  // const nav = document.getElementById("navMenu");
+  // const social = document.getElementById("socialMenu");
+  // const navLi = nav.querySelectorAll("li");
+  // const btnMobileImg = document.getElementById(
+  //   "btnMobileImg"
+  // ) as HTMLImageElement;
+
+  // btnMobile.addEventListener("click", toggleMenu);
+
+  // function toggleMenu() {
+  //   nav.classList.toggle("mobile-active");
+  //   social.classList.toggle("mobile-active");
+  //   btnMobileImg.src = nav.classList.contains("mobile-active")
+  //     ? "/icons/icon_close.svg"
+  //     : "/icons/icon_menu-mobile.svg";
+  // }
+
+  // navLi.forEach((item) => {
+  //   item.addEventListener("click", toggleMenu);
+  // });
+
+  // function atualizarImagem() {
+  //   let larguraTela = window.innerWidth;
+  //   const logo = document.getElementById("headerLogo") as HTMLImageElement;
+
+  //   if (larguraTela < 1250) {
+  //     logo.src = "/icons/ifranco_LOGO_mini.svg";
+  //     logo.classList.add("header__logo--mini");
+  //   } else {
+  //     logo.src = "/icons/ifranco_LOGO.svg";
+  //     logo.classList.remove("header__logo--mini");
+  //   }
+  // }
+
+  // window.addEventListener("load", function () {
+  //   atualizarImagem();
+  // });
+
+  // window.addEventListener("resize", function () {
+  //   atualizarImagem();
+  // });
+
+  const btnMenuMobile = document.getElementById("btnMenuMobile");
+
+  // btnMenuMobile.addEventListener("click", toggleMenu);
+
+  // function toggleMenu() {
+  //   nav.classList.toggle("mobile-active");
+  //   social.classList.toggle("mobile-active");
+  //   btnMobileImg.src = nav.classList.contains("mobile-active")
+  //     ? "/icons/icon_close.svg"
+  //     : "/icons/icon_menu-mobile.svg";
+  // }
+</script>

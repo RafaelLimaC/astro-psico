@@ -3,20 +3,50 @@ import Button from "./ButtonCTA.astro";
 ---
 
 <header>
-  <div class="header-wrapper">
+  <div id="header" class="header-wrapper">
     <img
       id="headerLogo"
       class="header-logo"
       src="/logo-mobile.svg"
       alt="Logo"
     />
-    <nav class="header-nav">
-      <ul class="header-nav__ul" id="navMenu">
-        <li>Home</li>
-        <li>Sobre</li>
-        <li>Serviços</li>
-        <li>Contato</li>
+    <nav class="header-nav" id="navMenu">
+      <ul class="header-nav__ul">
+        <li><a href="/#">Home</a></li>
+        <li><a href="/#">Sobre</a></li>
+        <li><a href="/#">Serviços</a></li>
+        <li><a href="">Contato</a></li>
       </ul>
+      <div class="nav-cta">
+        <Button>
+          <img
+            class="nav-cta__img"
+            src="/icons/edit.svg"
+            alt="Agende sua consulta"
+          />
+          Agende sua Consulta
+        </Button>
+      </div>
+      <div>
+        <ul class="social-list">
+          <li>
+            <a href="">
+              <img src="/icons/facebook.svg" alt="Página Facebook" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="/icons/instagram.svg" alt="Página Instagram" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="/icons/linkedin.svg" alt="Página Linkedin" />
+            </a>
+          </li>
+          <!-- PEGA OS LINKS DAS REDES SOCIAIS -->
+        </ul>
+      </div>
     </nav>
     <div class="header-cta">
       <Button>
@@ -41,17 +71,25 @@ import Button from "./ButtonCTA.astro";
 
 <style lang="scss">
   header {
-    padding: 1rem;
-
-    .header-wrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    display: flex;
+    justify-content: center;
   }
 
-  .header-logo {
-    height: 60px;
+  .header-wrapper {
+    max-width: 75rem; //1200px
+    width: 100%;
+
+    padding: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+
+    .header-logo {
+      height: 60px;
+    }
   }
 
   .header-nav {
@@ -60,12 +98,41 @@ import Button from "./ButtonCTA.astro";
     .header-nav__ul {
       display: flex;
       gap: 2.34vw;
+
+      li a {
+        color: var(--color-dark);
+        text-decoration: none;
+      }
     }
   }
 
-  .header-cta {
+  .header-nav.mobile-active {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    top: 92px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    height: calc(100vh - 92px);
+
+    background: url(/bottom-detail.svg) no-repeat bottom;
+    background-size: 100% auto;
+
+    .header-nav__ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 6vh;
+    }
+  }
+  .header-cta,
+  .nav-cta {
     display: none;
-    .header-cta__img {
+    .header-cta__img,
+    .nav-cta__img {
       width: 20px;
       margin-right: 0.5rem;
     }
@@ -80,10 +147,31 @@ import Button from "./ButtonCTA.astro";
     .header-menu__icon {
       width: 35px;
     }
+  }
 
-    .menu-mobile__open {
+  .nav-active {
+    .header-menu__icon {
       width: 23px;
       margin: 0.375rem;
+    }
+  }
+
+  .social-list {
+    display: none;
+  }
+
+  .nav-active {
+    .social-list {
+      display: flex;
+      gap: 0.675rem;
+
+      img {
+        width: 38px;
+      }
+    }
+
+    .nav-cta {
+      display: block;
     }
   }
 
@@ -102,26 +190,26 @@ import Button from "./ButtonCTA.astro";
 </style>
 <script>
   const btnMenuMobile = document.getElementById("btnMenuMobile");
+  const header = document.getElementById("header");
   const btnMenuMobileImg = document.getElementById(
     "btnMenuMobileImg"
   ) as HTMLImageElement;
 
   const navMenu = document.getElementById("navMenu");
-  const navLi = navMenu.querySelectorAll("li");
-
-  navLi.forEach((item) => {
-    item.addEventListener("click", toggleMenu);
-  });
 
   btnMenuMobile.addEventListener("click", toggleMenu);
 
   function toggleMenu() {
     navMenu.classList.toggle("mobile-active");
+    console.log("teste");
     btnMenuMobileImg.src = navMenu.classList.contains("mobile-active")
       ? "/icons/menu-close.svg"
       : "/icons/menu.svg";
+    navMenu.classList.contains;
+    navMenu.classList.contains;
 
     btnMenuMobileImg.classList.toggle("menu-mobile__open");
+    header.classList.toggle("nav-active");
   }
 
   function updateLogo() {
@@ -130,16 +218,42 @@ import Button from "./ButtonCTA.astro";
 
     if (screenSize < 800) {
       logo.src = "/logo-mobile.svg";
+      return;
+    }
+    // aaaaaaaaaaaaaaa tendi
+    logo.src = "/logo-fullsize.svg";
+  }
+
+  function toggleEventListeners(screenSize) {
+    const navLi = navMenu.querySelectorAll("li");
+
+    if (screenSize < 800) {
+      navLi.forEach((item) => {
+        item.addEventListener("click", toggleMenu);
+        console.log("add");
+      });
     } else {
-      logo.src = "/logo-fullsize.svg";
+      navLi.forEach((item) => {
+        item.removeEventListener("click", toggleMenu);
+        console.log("remove");
+      });
     }
   }
 
-  window.addEventListener("load", function () {
+  window.addEventListener("resize", function () {
+    const screenSize = window.innerWidth;
+
     updateLogo();
+    toggleEventListeners(screenSize);
+
+    if (screenSize >= 800 && header.classList.contains("nav-active")) {
+      toggleMenu();
+
+      // auqi é pra fechar se o cara der resize com ele aberto
+    }
   });
 
-  window.addEventListener("resize", function () {
-    updateLogo();
-  });
+  updateLogo();
+  const screenSize = window.innerWidth;
+  toggleEventListeners(screenSize);
 </script>

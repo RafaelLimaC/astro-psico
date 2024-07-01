@@ -6,7 +6,7 @@
   <slot />
 </button>
 
-<style>
+<style lang="scss">
   button {
     background-color: var(--accent-orange);
     color: white;
@@ -17,5 +17,10 @@
 
     display: flex;
     align-items: center;
+    transition: box-shadow 0.4s;
+
+    &:hover {
+      box-shadow: 0px 3px 16px var(--accent-orange);
+    }
   }
 </style>

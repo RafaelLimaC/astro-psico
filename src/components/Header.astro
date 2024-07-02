@@ -15,7 +15,7 @@ import Button from "./ButtonCTA.astro";
         <li><a href="/#">Home</a></li>
         <li><a href="/#">Sobre</a></li>
         <li><a href="/#">Serviços</a></li>
-        <li><a href="">Contato</a></li>
+        <li><a href="/#">Contato</a></li>
       </ul>
       <div class="nav-cta">
         <Button>
@@ -103,6 +103,13 @@ import Button from "./ButtonCTA.astro";
         color: var(--color-dark);
         text-decoration: none;
       }
+
+      .header-nav__item {
+        a {
+          font-weight: bold;
+          color: var(--color-blue);
+        }
+      }
     }
   }
 
@@ -128,6 +135,7 @@ import Button from "./ButtonCTA.astro";
       gap: 6vh;
     }
   }
+
   .header-cta,
   .nav-cta {
     display: none;
@@ -188,6 +196,7 @@ import Button from "./ButtonCTA.astro";
     }
   }
 </style>
+
 <script>
   const btnMenuMobile = document.getElementById("btnMenuMobile");
   const header = document.getElementById("header");
@@ -196,6 +205,7 @@ import Button from "./ButtonCTA.astro";
   ) as HTMLImageElement;
 
   const navMenu = document.getElementById("navMenu");
+  const navLi = navMenu.querySelectorAll("li");
 
   btnMenuMobile.addEventListener("click", toggleMenu);
 
@@ -225,20 +235,19 @@ import Button from "./ButtonCTA.astro";
   }
 
   function toggleEventListeners(screenSize) {
-    const navLi = navMenu.querySelectorAll("li");
-
     if (screenSize < 800) {
-      navLi.forEach((item) => {
-        item.addEventListener("click", toggleMenu);
-        console.log("add");
-      });
+      navLi.forEach((item) => item.addEventListener("click", toggleMenu));
     } else {
-      navLi.forEach((item) => {
-        item.removeEventListener("click", toggleMenu);
-        console.log("remove");
-      });
+      navLi.forEach((item) => item.removeEventListener("click", toggleMenu));
     }
   }
+
+  navLi.forEach((item) => {
+    item.addEventListener("click", () => {
+      navLi.forEach((item) => item.classList.remove("header-nav__item"));
+      item.classList.add("header-nav__item");
+    });
+  });
 
   window.addEventListener("resize", function () {
     const screenSize = window.innerWidth;

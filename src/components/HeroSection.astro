@@ -27,7 +27,7 @@ import Button from "./ButtonCTA.astro";
     <img class="hero__img" src="/heroimg.png" alt="Samantha Dutra" />
   </div>
   <span class="hero-arrow-down">
-    <img src="/icons/arrow-down.svg" alt="Arrow Down" />
+    <img loading="lazy" src="/icons/arrow-down.svg" alt="Arrow Down" />
   </span>
 </section>
 
@@ -83,7 +83,8 @@ import Button from "./ButtonCTA.astro";
 
     .hero-arrow-down {
       position: absolute;
-      bottom: 3rem;
+      bottom: 2.5rem;
+      animation: upAndDown 2s ease infinite;
     }
   }
 
@@ -99,6 +100,18 @@ import Button from "./ButtonCTA.astro";
         margin-right: 2.6vw;
         padding-bottom: 0;
       }
+    }
+  }
+
+  @keyframes upAndDown {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
     }
   }
 </style>

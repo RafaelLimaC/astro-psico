@@ -24,8 +24,11 @@ import Button from "./ButtonCTA.astro";
     </Button>
   </div>
   <div>
-    <img class="hero__img" src="/heroimg.png" alt="" />
+    <img class="hero__img" src="/heroimg.png" alt="Samantha Dutra" />
   </div>
+  <span class="hero-arrow-down">
+    <img src="/icons/arrow-down.svg" alt="Arrow Down" />
+  </span>
 </section>
 
 <style lang="scss">
@@ -42,6 +45,8 @@ import Button from "./ButtonCTA.astro";
     justify-content: space-around;
     flex-direction: column;
     gap: 2.25rem;
+
+    position: relative;
 
     .hero-text {
       display: flex;
@@ -73,7 +78,12 @@ import Button from "./ButtonCTA.astro";
     }
 
     &__img {
-      padding-bottom: 4rem;
+      padding-bottom: 5rem;
+    }
+
+    .hero-arrow-down {
+      position: absolute;
+      bottom: 3rem;
     }
   }
 

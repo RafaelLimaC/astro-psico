@@ -1,16 +1,48 @@
 ---
 import Header from "../components/Header.astro";
+import HeroSection from "../components/HeroSection.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Samantha Dutra, Psicologia e Neuropsicologia" />
 <div class="hero-wrapper">
   <Header />
+  <HeroSection />
+  <span class="hero-detail"></span>
 </div>
 
-<style>
+<style lang="scss">
   .hero-wrapper {
     background: var(--background-gradient);
     min-height: 100vh;
+    position: relative;
+
+    .hero-detail {
+      position: absolute;
+      width: 100%;
+      background-color: var(--accent-pink);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 1rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 34%;
+        background-color: var(--accent-orange);
+        left: 0;
+        height: 1rem;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 34%;
+        background-color: var(--accent-blue);
+        right: 0;
+        height: 1rem;
+      }
+    }
   }
 </style>

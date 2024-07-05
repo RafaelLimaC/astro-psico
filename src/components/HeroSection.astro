@@ -1,37 +1,45 @@
 ---
 import Button from "./ButtonCTA.astro";
+import Detail from "./Detail.astro";
 ---
 
-<section class="hero">
-  <div class="hero__text">
-    <h1 class="hero__text-title">
-      Descubra o seu
-      <strong>potencial,</strong> encontre
-      <strong>equilíbrio</strong> e seja
-      <strong>você</strong> mesmo
-    </h1>
-    <p class="hero__text-paragraph">
-      Olá, me chamo Samantha, sou psicóloga e acredito que o autoconhecimento é
-      o primeiro passo para se ter o tão desejado equilíbrio emocional
-    </p>
-    <Button>
-      <img
-        class="hero__button-img"
-        src="/icons/edit.svg"
-        alt="Agende sua consulta"
-      />
-      Agende sua Consulta
-    </Button>
+<section>
+  <div class="hero">
+    <div class="hero__text">
+      <h1 class="hero__text-title">
+        Descubra o seu
+        <strong>potencial,</strong> encontre
+        <strong>equilíbrio</strong> e seja
+        <strong>você</strong> mesmo
+      </h1>
+      <p class="hero__text-paragraph">
+        Olá, me chamo Samantha, sou psicóloga e acredito que o autoconhecimento
+        é o primeiro passo para se ter o tão desejado equilíbrio emocional
+      </p>
+      <Button class="orange">
+        <img
+          class="hero__button-img"
+          src="/icons/edit.svg"
+          alt="Agende sua consulta"
+        />
+        Agende sua Consulta
+      </Button>
+    </div>
+    <div>
+      <img class="hero__img" src="/heroimg.png" alt="Samantha Dutra" />
+    </div>
+    <span class="hero-arrow-down">
+      <img loading="lazy" src="/icons/arrow-down.svg" alt="Arrow Down" />
+    </span>
   </div>
-  <div>
-    <img class="hero__img" src="/heroimg.png" alt="Samantha Dutra" />
-  </div>
-  <span class="hero-arrow-down">
-    <img loading="lazy" src="/icons/arrow-down.svg" alt="Arrow Down" />
-  </span>
+  <Detail />
 </section>
 
 <style lang="scss">
+  section {
+    position: relative;
+  }
+
   .hero {
     min-height: calc(100vh - 92px);
     max-width: 75rem; //1200px

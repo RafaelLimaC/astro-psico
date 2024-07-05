@@ -1,0 +1,31 @@
+---
+import Button from "./ButtonCTA.astro";
+---
+
+<section class="about">
+  <div class="about-help">
+    <div class="about-help__info">
+      <h2>Como posso ajudar?</h2>
+      <p>
+        E se você tivesse um momento só seu, focado em você, nas suas questões,
+        medos, anseios e desejos? Faz sentido?
+      </p>
+      <Button class="transparent">
+        <img
+          class="about-help__info--img"
+          src="/icons/edit.svg"
+          alt="Agende sua consulta"
+        />
+        Agende sua consulta
+      </Button>
+    </div>
+    <div class="about-help__call"></div>
+  </div>
+</section>
+
+<style lang="scss">
+  .about-help__info--img {
+    width: 20px;
+    margin-right: 0.5rem;
+  }
+</style>

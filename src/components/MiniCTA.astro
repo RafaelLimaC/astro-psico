@@ -4,14 +4,32 @@ import Button from "./ButtonCTA.astro";
 
 <section class="about">
   <div class="about-help">
-    <div class="about-help__info">
-      <div class="about-help__info-wrapper">
-        <h2>Como posso ajudar?</h2>
-        <p>
-          E se você tivesse um momento só seu, focado em você, nas suas
-          questões, medos, anseios e desejos? Faz sentido?
-        </p>
-        <ul class="about-help__info__list about-help__info__list-mobile">
+    <div class="content-anchor">
+      <div class="about-help__info">
+        <div class="about-help__info-wrapper">
+          <h2>Como posso ajudar?</h2>
+          <p>
+            E se você tivesse um momento só seu, focado em você, nas suas
+            questões, medos, anseios e desejos? Faz sentido?
+          </p>
+          <ul class="about-help__info__list about-help__info__list-mobile">
+            <li>Psicoterapia</li>
+            <li>Autoconhecimento</li>
+            <li>Ansiedade</li>
+            <li>Depressão</li>
+            <li>Transtornos</li>
+            <li>Avaliação Clínica</li>
+          </ul>
+          <Button class="transparent">
+            <img
+              class="about-help__info--img"
+              src="/icons/edit-orange.svg"
+              alt="Agende sua consulta"
+            />
+            Agende sua consulta
+          </Button>
+        </div>
+        <ul class="about-help__info__list about-help__info__list-fullsize">
           <li>Psicoterapia</li>
           <li>Autoconhecimento</li>
           <li>Ansiedade</li>
@@ -19,23 +37,7 @@ import Button from "./ButtonCTA.astro";
           <li>Transtornos</li>
           <li>Avaliação Clínica</li>
         </ul>
-        <Button class="transparent">
-          <img
-            class="about-help__info--img"
-            src="/icons/edit-orange.svg"
-            alt="Agende sua consulta"
-          />
-          Agende sua consulta
-        </Button>
       </div>
-      <ul class="about-help__info__list about-help__info__list-fullsize">
-        <li>Psicoterapia</li>
-        <li>Autoconhecimento</li>
-        <li>Ansiedade</li>
-        <li>Depressão</li>
-        <li>Transtornos</li>
-        <li>Avaliação Clínica</li>
-      </ul>
     </div>
     <div class="about-help__call">
       <h2>Ligue Agora</h2>
@@ -68,84 +70,89 @@ import Button from "./ButtonCTA.astro";
     max-width: 76.25rem; //1220px
     width: 100%;
 
-    padding: 2.5rem 1.5rem;
+    padding: 2.5rem 1rem;
     margin: 0 auto;
 
-    background: transparent;
+    background: var(--color-light);
 
     &-help {
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
 
-      &__info {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-
-        box-shadow: 5px 5px 30px #f4752152;
-        border-radius: 1.25rem;
-        padding: 2.75rem 1.5rem 2.25rem 1.5rem;
-
-        background: var(--background-gradient);
+      .content-anchor {
         position: relative;
+        flex-grow: 1;
 
-        &::after {
+        &::before {
           content: url(detail-orange.svg);
           position: absolute;
-          bottom: 0;
-          left: 1rem;
+          bottom: 1rem;
+          left: 0.75rem;
           transform: translate(-50%, 50%);
-          z-index: -1;
         }
 
-        h2 {
-          color: var(--accent-blue);
-          font-family: var(--ff-roboto-slab);
-          font-size: 1.75rem;
-          font-weight: bold;
-        }
-
-        p {
-          color: var(--color-dark);
-          line-height: 1.9;
-          max-width: 33ch;
-        }
-
-        &__list {
+        .about-help__info {
           display: flex;
-          gap: 1rem;
           flex-direction: column;
-          padding-bottom: 1rem;
+          gap: 1.5rem;
+          height: 100%;
 
-          li {
-            font-family: var(--ff-roboto-slab);
+          box-shadow: 5px 5px 30px #f4752152;
+          border-radius: 1.25rem;
+          padding: 2.75rem 1.5rem 2.25rem 1.5rem;
+
+          background: var(--background-gradient);
+          position: relative;
+
+          h2 {
             color: var(--accent-blue);
+            font-family: var(--ff-roboto-slab);
+            font-size: 1.75rem;
             font-weight: bold;
+          }
 
+          p {
+            color: var(--color-dark);
+            line-height: 1.9;
+            max-width: 33ch;
+          }
+
+          &__list {
             display: flex;
-            align-items: center;
+            gap: 1rem;
+            flex-direction: column;
+            padding-bottom: 1rem;
 
-            &:before {
-              content: url(/li-img.svg);
-              margin-right: 0.75rem;
+            li {
+              font-family: var(--ff-roboto-slab);
+              color: var(--accent-blue);
+              font-weight: bold;
+
+              display: flex;
+              align-items: center;
+
+              &:before {
+                content: url(/li-img.svg);
+                margin-right: 0.75rem;
+              }
+            }
+
+            &-fullsize {
+              display: none;
             }
           }
 
-          &-fullsize {
-            display: none;
+          &--img {
+            width: 20px;
+            margin-right: 0.5rem;
           }
-        }
 
-        &--img {
-          width: 20px;
-          margin-right: 0.5rem;
-        }
-
-        &-wrapper {
-          display: flex;
-          flex-direction: column;
-          gap: 1.25rem;
+          &-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+          }
         }
       }
 
@@ -214,39 +221,33 @@ import Button from "./ButtonCTA.astro";
         flex-direction: row;
         gap: 1rem;
 
-        &__info {
-          flex-direction: row;
-          padding: 1.75rem;
-          flex-grow: 1;
-          justify-content: space-between;
-
-          &::after {
-            content: url(detail-orange.svg);
-            position: absolute;
+        .content-anchor {
+          &::before {
             bottom: 2rem;
             left: 1rem;
-            transform: translate(-50%, 50%);
-            z-index: -1;
           }
 
-          p {
-            font-size: clamp(0.9rem, 1.5vw, 1rem);
-          }
-
-          &__list {
-            padding-bottom: 0;
-            &-mobile {
-              display: none;
-            }
-
-            &-fullsize {
-              display: flex;
-              justify-content: space-around;
-            }
-          }
-
-          &-wrapper {
+          .about-help__info {
+            flex-direction: row;
+            padding: 1.75rem;
+            flex-grow: 1;
             justify-content: space-between;
+
+            &__list {
+              padding-bottom: 0;
+              &-mobile {
+                display: none;
+              }
+
+              &-fullsize {
+                display: flex;
+                justify-content: space-around;
+              }
+            }
+
+            &-wrapper {
+              justify-content: space-between;
+            }
           }
         }
 
@@ -269,50 +270,13 @@ import Button from "./ButtonCTA.astro";
   }
 
   @media screen and (min-width: 1000px) {
-    .about {
-      &-help {
-        flex-direction: row;
-        gap: 1rem;
+    .about-help__call {
+      max-width: 400px;
 
-        &__info {
-          flex-direction: row;
-          padding: 1.75rem;
-          flex-grow: 1;
-          justify-content: space-between;
-
-          p {
-            font-size: clamp(0.9rem, 1.5vw, 1rem);
-          }
-
-          &__list {
-            padding-bottom: 0;
-            &-mobile {
-              display: none;
-            }
-
-            &-fullsize {
-              display: flex;
-              justify-content: space-around;
-            }
-          }
-
-          &-wrapper {
-            justify-content: space-between;
-          }
-        }
-
-        &__call {
-          padding: 1.75rem;
-          max-width: 400px;
-
-          &__whatsapp {
-            justify-content: space-between;
-
-            &__content {
-              img {
-                width: 52px;
-              }
-            }
+      &__whatsapp {
+        &__content {
+          img {
+            width: 52px;
           }
         }
       }
@@ -322,25 +286,9 @@ import Button from "./ButtonCTA.astro";
   @media screen and (min-width: 1160px) {
     .about {
       &-help {
-        flex-direction: row;
-        gap: 1rem;
-
-        &__info {
-          flex-direction: row;
-          padding: 2.75rem;
-          flex-grow: 1;
-          justify-content: space-between;
-
-          &__list {
-            padding-bottom: 0;
-            &-mobile {
-              display: none;
-            }
-
-            &-fullsize {
-              display: flex;
-              justify-content: space-around;
-            }
+        .content-anchor {
+          .about-help__info {
+            padding: 2.75rem;
           }
         }
 
@@ -350,7 +298,6 @@ import Button from "./ButtonCTA.astro";
 
           &__whatsapp {
             flex-direction: row;
-            justify-content: space-between;
           }
         }
       }

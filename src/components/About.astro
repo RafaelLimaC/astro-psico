@@ -4,14 +4,16 @@
 
 <section>
   <div class="about-her">
-    <div>
-      <img
-        loading="lazy"
-        src="/samantha-dutra-about.png"
-        alt="Samantha Dutra"
-      />
+    <div class="about-her__image">
+      <div>
+        <img
+          loading="lazy"
+          src="/samantha-dutra-about.png"
+          alt="Samantha Dutra"
+        />
+      </div>
     </div>
-    <div>
+    <div class="about-her__content">
       <h2>Sobre mim</h2>
       <h3>
         Sou a Dra. Samantha Dutra, Especialista em Psicologia e Neuropsicologia
@@ -21,12 +23,14 @@
         adultos e idosos, Samantha Dutra Santos atende de maneira particular.
         Dispõe de forte expertise em realização de triagens e avaliação de novos
         pacientes, direcionando-os ao tipo de tratamento psicológico mais
-        adequado ao seu momento e perfil. Samantha Dutra Santos, CRP 05/052513,
-        atua como psicóloga pela abordagem fenomenológico-existencial e
-        Neuropsicóloga. A profissional tem como objetivo favorecer o
-        autoconhecimento e o crescimento pessoal, com atendimentos
-        psicoterápicos individuais. Atua com ênfase em intervenção terapêutica,
-        psicopatologia, e na visão de Kierkegaard e Heidegger.
+        adequado ao seu momento e perfil.
+      </p>
+      <p>
+        Samantha Dutra Santos, CRP 05/052513, atua como psicóloga pela abordagem
+        fenomenológico-existencial e Neuropsicóloga. A profissional tem como
+        objetivo favorecer o autoconhecimento e o crescimento pessoal, com
+        atendimentos psicoterápicos individuais. Atua com ênfase em intervenção
+        terapêutica, psicopatologia, e na visão de Kierkegaard e Heidegger.
       </p>
     </div>
   </div>
@@ -39,5 +43,106 @@
 
     margin: 0 auto;
     padding: 1rem;
+
+    .about-her {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 3rem;
+
+      &__image {
+        position: relative;
+        width: fit-content;
+        margin: 0 auto;
+
+        &::before {
+          content: url("/detail-blue.svg");
+          position: absolute;
+          top: 3rem;
+          right: 3rem;
+          transform: translate(50%, -50%);
+        }
+
+        div {
+          position: relative;
+          z-index: 2;
+
+          img {
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+            z-index: 1;
+          }
+        }
+      }
+
+      &__content {
+        h2 {
+          font-size: 1.3rem;
+          color: var(--accent-orange);
+          margin-bottom: 1rem;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+        }
+
+        h3 {
+          font-size: 2.375rem;
+          font-weight: 700;
+          color: var(--color-blue);
+          margin-bottom: 2rem;
+          line-height: 1.25;
+          font-family: var(--ff-roboto-slab);
+        }
+
+        p {
+          color: var(--color-dark);
+          margin-bottom: 1rem;
+          line-height: 2;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    section {
+      .about-her {
+        flex-direction: row;
+        align-items: center;
+        gap: 5rem;
+
+        &__image {
+          margin: none;
+
+          &::before {
+            content: url("/detail-blue.svg");
+            position: absolute;
+            top: 4.75rem;
+            right: 3rem;
+            transform: translate(50%, -50%);
+          }
+
+          div {
+            position: relative;
+            margin-top: 5rem;
+            z-index: 2;
+
+            img {
+              max-width: 500px;
+              width: 100%;
+              min-width: 500px;
+              height: auto;
+              z-index: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    section {
+      .about-her {
+        gap: 6rem;
+      }
+    }
   }
 </style>

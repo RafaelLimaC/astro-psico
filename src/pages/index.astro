@@ -3,6 +3,7 @@ import About from "../components/About.astro";
 import Header from "../components/Header.astro";
 import HeroSection from "../components/HeroSection.astro";
 import MiniCTA from "../components/MiniCTA.astro";
+import Services from "../components/Services.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -15,14 +16,38 @@ import Layout from "../layouts/Layout.astro";
   <MiniCTA />
   <About />
 </div>
+<div class="services-wrapper">
+  <Services />
+</div>
 
 <style lang="scss">
   .hero-wrapper {
     background: var(--background-gradient);
     position: relative;
+    overflow: hidden;
   }
 
   .about-wrapper {
     background-color: var(--color-light);
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3rem;
+  }
+
+  .services-wrapper {
+    padding-bottom: 5rem;
+  }
+
+  @media screen and (min-width: 800px) {
+    .about-wrapper {
+      gap: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .services-wrapper {
+      padding-bottom: 7rem;
+    }
   }
 </style>

@@ -2,17 +2,19 @@
 const { class: className, ...rest } = Astro.props;
 ---
 
-<button class={className} {...rest}>
+<a class={className} href="#contato" {...rest}>
   <slot />
-</button>
+</a>
 
 <style lang="scss">
-  button {
+  a {
     padding: 1rem 1.5rem;
     border: none;
     border-radius: 1.75rem;
     cursor: pointer;
     max-width: fit-content;
+    text-decoration: none;
+    font-weight: 300;
 
     display: flex;
     align-items: center;

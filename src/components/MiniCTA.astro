@@ -9,8 +9,9 @@ import Button from "./ButtonCTA.astro";
         <div class="about-help__info-wrapper">
           <h2>Como posso ajudar?</h2>
           <p>
-            E se você tivesse um momento só seu, focado em você, nas suas
-            questões, medos, anseios e desejos? Faz sentido?
+            Realizo atendimentos de Avaliação Neuropsicológica para crianças,
+            adolescentes, adultos e idosos, e atuo como Psicoterapeuta pela
+            perspectiva Fenomenológico-Existencial de maneira particular.
           </p>
           <ul class="about-help__info__list about-help__info__list-mobile">
             <li>Psicoterapia</li>
@@ -47,14 +48,14 @@ import Button from "./ButtonCTA.astro";
       </p>
       <div class="about-help__call__whatsapp">
         <div class="about-help__call__whatsapp__content">
-          <img src="/icons/square-whatsapp.svg" alt="Whatsapp Logo" />
+          <img src="/icons/round-whatsapp.svg" alt="Whatsapp Logo" />
           <div class="about-help__call__whatsapp__content--info">
             <span>Rio de Janeiro, RJ</span>
             <span>(21) 99913-1898</span>
           </div>
         </div>
         <div class="about-help__call__whatsapp__content">
-          <img src="/icons/square-whatsapp.svg" alt="Whatsapp Logo" />
+          <img src="/icons/round-whatsapp.svg" alt="Whatsapp Logo" />
           <div class="about-help__call__whatsapp__content--info">
             <span>Macaé, RJ</span>
             <span>(22) 99948-1160</span>
@@ -115,7 +116,6 @@ import Button from "./ButtonCTA.astro";
           p {
             color: var(--color-dark);
             line-height: 1.9;
-            max-width: 33ch;
           }
 
           &__list {
@@ -160,6 +160,7 @@ import Button from "./ButtonCTA.astro";
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
+        justify-content: space-between;
 
         background-color: var(--accent-orange);
         border-radius: 1.25rem;
@@ -233,6 +234,10 @@ import Button from "./ButtonCTA.astro";
             flex-grow: 1;
             justify-content: space-between;
 
+            p {
+              max-width: 33ch;
+            }
+
             &__list {
               padding-bottom: 0;
               &-mobile {
@@ -293,7 +298,7 @@ import Button from "./ButtonCTA.astro";
         }
 
         &__call {
-          padding: 2.75rem;
+          padding: 3.75rem 2.75rem;
           max-width: 499px;
 
           &__whatsapp {

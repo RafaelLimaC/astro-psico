@@ -133,6 +133,7 @@
       display: flex;
       flex-direction: column;
       gap: 3rem;
+      margin-top: 2rem;
 
       &__image {
         position: relative;
@@ -167,6 +168,10 @@
           margin-top: 1rem;
           line-height: 1.5;
           font-weight: bold;
+
+          strong {
+            font-weight: 300;
+          }
         }
 
         p {
@@ -216,14 +221,13 @@
       .about-continuation {
         flex-direction: row;
         align-items: center;
-        gap: 10rem;
+        gap: 6rem;
 
         &__image {
           margin: none;
 
           div {
             position: relative;
-            margin-top: 5rem;
             z-index: 2;
 
             img {
@@ -250,6 +254,14 @@
             line-height: 2;
           }
         }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    section {
+      .about-continuation {
+        gap: 10rem;
       }
     }
   }

@@ -8,8 +8,14 @@ import ButtonCTA from "./ButtonCTA.astro";
       <h2>Serviços</h2>
       <h3>Psicologia e Neuropsicologia</h3>
       <p>
-        Tenho como objetivo favorecer o autoconhecimento e o crescimento
-        pessoal, com atendimentos psicoterápicos individuais.
+        A Psicologia Clínica tem como objetivo favorecer o autoconhecimento e o
+        crescimento pessoal lidando com as questões em atendimentos
+        psicoterápicos individuais. A Avaliação Neuropsicológica é uma
+        investigação clínica com o objetivo de esclarecer questionamentos a
+        respeito do funcionamento cognitivo, comportamental e emocional do
+        indivíduo avaliado/paciente. Ela consiste em um método clínico de
+        investigação sistematizada do funcionamento das funções cognitivas,
+        funcionais e afetivas.
       </p>
       <ButtonCTA class="transparent">
         <img
@@ -22,45 +28,47 @@ import ButtonCTA from "./ButtonCTA.astro";
     </div>
     <ul class="services-list">
       <li>
-        <h4>Psicoterapia</h4>
+        <h4>Fenomenologia Existencial</h4>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida
-          felis non urna maximus, ac tempus turpis fringilla.
-        </p>
-      </li>
-      <li>
-        <h4>Conhecimento</h4>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida
-          felis non urna maximus, ac tempus turpis fringilla.
+          <strong>Sentido e possibilidade:</strong> pense e explore a angústia, a
+          liberdade, a escolha e significado da existência a partir do pensamento
+          de filósofos existenciais: Sartre, Heidegger e Kierkegaard.
         </p>
       </li>
       <li>
         <h4>Ansiedade</h4>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida
-          felis non urna maximus, ac tempus turpis fringilla.
+          <strong>Acolha sua angústia, medo e sofrimento:</strong> reflita as situações
+          que vida te apresenta, pense, fale e a partir disso, faça escolhas conscientes
+          para sua vida.
+        </p>
+      </li>
+      <li>
+        <h4>Atuação da Psicoterapia</h4>
+        <p>
+          <strong>Autoconhecimento e tomada de consciência:</strong> compreenda suas
+          questões e construa uma nova relação com a vida.
         </p>
       </li>
       <li>
         <h4>Depressão</h4>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida
-          felis non urna maximus, ac tempus turpis fringilla.
+          <strong>Entendimento da perda do sentido da vida:</strong> apoio, reflexão,
+          ressignificação do viver, preservação das possibilidades.
         </p>
       </li>
       <li>
-        <h4>Transtonos</h4>
+        <h4>Avaliação Neuropsicológica</h4>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida
-          felis non urna maximus, ac tempus turpis fringilla.
+          <strong>Mapeamento do funcionamento cerebral:</strong> Identificar disfunções
+          cognitivas e seu impacto funcional no cotidiano.
         </p>
       </li>
       <li>
-        <h4>Avaliação Clínica</h4>
+        <h4>Transtornos</h4>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida
-          felis non urna maximus, ac tempus turpis fringilla.
+          <strong>Desvendar o potencial escondido:</strong> Compreenda os desafios
+          e desvende o potencial que reside em cada indivíduo.
         </p>
       </li>
     </ul>
@@ -90,8 +98,6 @@ import ButtonCTA from "./ButtonCTA.astro";
         display: flex;
         gap: 0.75rem;
         flex-direction: column;
-        max-width: 310px;
-        width: 100%;
 
         h2 {
           font-size: 1.3rem;
@@ -148,6 +154,10 @@ import ButtonCTA from "./ButtonCTA.astro";
             color: var(--color-dark);
             line-height: 1.75;
             margin-left: 2.3rem;
+
+            strong {
+              font-weight: bold;
+            }
           }
         }
       }
@@ -170,8 +180,10 @@ import ButtonCTA from "./ButtonCTA.astro";
         }
 
         &-info {
+          max-width: 250px;
+          width: 100%;
           h3 {
-            font-size: 2.5rem;
+            font-size: 2rem;
           }
         }
       }
@@ -181,8 +193,17 @@ import ButtonCTA from "./ButtonCTA.astro";
   @media screen and (min-width: 1000px) {
     section {
       .services {
-        gap: 5rem;
+        gap: 4rem;
         padding: 2.5rem;
+
+        &-info {
+          max-width: 310px;
+          width: 100%;
+
+          h3 {
+            font-size: 2.5rem;
+          }
+        }
       }
     }
   }

@@ -1,5 +1,6 @@
 ---
 import About from "../components/About.astro";
+import Depoimentos from "../components/Depoimentos.astro";
 import Header from "../components/Header.astro";
 import HeroSection from "../components/HeroSection.astro";
 import MiniCTA from "../components/MiniCTA.astro";
@@ -20,6 +21,7 @@ import Layout from "../layouts/Layout.astro";
   <div class="services-wrapper">
     <Services />
   </div>
+  <Depoimentos />
 </main>
 
 <style lang="scss">
@@ -43,10 +45,6 @@ import Layout from "../layouts/Layout.astro";
   }
 
   @media screen and (min-width: 800px) {
-    .about-wrapper {
-      gap: 5rem;
-    }
-
     .services-wrapper {
       padding-bottom: 7rem;
     }

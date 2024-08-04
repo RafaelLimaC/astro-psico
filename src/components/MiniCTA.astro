@@ -218,13 +218,16 @@ import Button from "./ButtonCTA.astro";
 
   @media screen and (min-width: 800px) {
     .about {
+      padding: 4.5rem 1rem;
+
       &-help {
         flex-direction: row;
         gap: 1rem;
 
         .content-anchor {
           &::before {
-            bottom: 2rem;
+            bottom: 1rem;
+            transform: translate(-50%, 0);
             left: 1rem;
           }
 

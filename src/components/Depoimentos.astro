@@ -4,54 +4,38 @@ import Detail from "./Detail.astro";
 ---
 
 <section class="depoimentos" id="depoimentos">
-  <h4>Depoimentos dos Nossos Clientes</h4>
   <div class="swiper swiper-container">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
         <div class="swiper-content">
-          <div class="swiper-content__details">
-            <img src="/swiper/swiper-aspas.svg" alt="Aspas" />
-            <img src="/swiper/swiper-stars.svg" alt="5 estrelas" />
-          </div>
+          <img src="/aspas-swiper.svg" alt="Aspas" />
           <p>
-            Atendimento com equipe nota dez, treinada, qualificada em
-            atendimento e prestação de serviços com os seus clientes, excelente
-            opção de fornecedor para que você possa incluir na sua lista de
-            prestadores de serviços e pode indicar para os seus amigos e
-            familiares. 05 estelas!
+            É uma profissional atenciosa e está fazendo um belo trabalho com a
+            minha filha neste ano. Dá pra perceber os resultados.
           </p>
           <div class="swiper__slide-cliente">
-            <img src="/swiper/cleber-coutinho.png" alt="" />
-            <div>
-              <span>Cleber Coutinho</span>
-              <span>Google Review</span>
-            </div>
+            <span>MARCOS R.</span>
+            <span>Cliente</span>
           </div>
         </div>
       </div>
       <div class="swiper-slide">
         <div class="swiper-content">
-          <div class="swiper-content__details">
-            <img src="/swiper/swiper-aspas.svg" alt="Aspas" />
-            <img src="/swiper/swiper-stars.svg" alt="5 estrelas" />
-          </div>
+          <img src="/aspas-swiper.svg" alt="Aspas" />
           <p>
-            Se você está a procura de Profissionais capacitados e atenciosos,
-            com toda certeza você encontra na Novamed! Muito sucesso a empressa,
-            Sr. Mariano pessoa excelentissima sempre disposto a ajudar e melhor
-            atender, parabens a toda equipe!
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Pellentesque id nulla scelerisque, pretium enim non, fringilla
+            sapien. Sed ac enim nec augue faucibus consequat.
           </p>
           <div class="swiper__slide-cliente">
-            <img src="/swiper/anne-gomes.png" alt="" />
-            <div>
-              <span>Anne Gomes</span>
-              <span>Google Review</span>
-            </div>
+            <span>PEDRO L.</span>
+            <span>Cliente</span>
           </div>
         </div>
       </div>
     </div>
-    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
   </div>
   <Detail />
 </section>
@@ -59,86 +43,61 @@ import Detail from "./Detail.astro";
 <style lang="scss">
   .depoimentos {
     margin: 0 auto;
-    background-color: white;
-    padding: 3rem 0;
+    background: var(--background-gradient);
+    padding: 5rem 0 3.5rem;
     position: relative;
     box-shadow: -5px -5px 20px #f4752152;
-
-    h4 {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--color-dark);
-      text-align: center;
-      margin-bottom: 1rem;
-      line-height: 1.5;
-    }
   }
 
   .swiper-container {
-    padding: 1.5rem 1.5rem 4rem 1.5rem;
+    padding: 1rem 2.5rem;
     width: 100%;
-    max-width: 102rem;
+    max-width: 76.25rem;
   }
 
   .swiper-slide {
-    border-radius: 1.5rem;
-    padding: 3rem 2rem;
+    padding: 1rem;
     cursor: grab;
-    box-shadow: rgba(100, 100, 111, 0.17) 0px 7px 24px 0px;
 
     .swiper-content {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      align-items: center;
+      gap: 5rem;
 
-      &__details {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        img:first-child {
-          height: 32px;
-        }
-
-        img:last-child {
-          height: 16px;
-        }
+      img {
+        height: 40px;
       }
 
       p {
-        font-size: 0, 8125rem;
+        font-size: 1.5rem;
         font-weight: 400;
-        line-height: 1.75;
-        color: var(--color-gray);
-        min-height: 5lh;
+        line-height: 1.25;
+        color: var(--accent-blue);
+        text-align: center;
+        max-width: 45ch;
+        font-family: var(--ff-roboto-slab);
       }
 
       .swiper__slide-cliente {
         display: flex;
-        gap: 1rem;
+        flex-direction: column;
         align-items: center;
 
-        img {
-          height: 54px;
+        span {
+          font-size: 1.3rem;
+          line-height: 1.3;
+          font-weight: 400;
+          color: var(--accent-orange);
+          letter-spacing: 0.1em;
         }
 
-        div {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-
-          span {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--color-dark);
-            line-height: 1.3;
-          }
-
-          span:last-child {
-            font-weight: 400;
-            font-size: 0.75rem;
-            color: var(--color-gray);
-          }
+        span:last-child {
+          font-size: 1.3rem;
+          letter-spacing: 0;
+          line-height: 1.5;
+          font-weight: 400;
+          color: var(--color-dark);
         }
       }
     }
@@ -146,48 +105,16 @@ import Detail from "./Detail.astro";
 
   @media screen and (min-width: 800px) {
     .depoimentos {
-      padding: 6rem 0;
-
-      h4 {
-        font-size: 3.25rem;
-        font-weight: 600;
-        margin-bottom: 3rem;
-      }
+      padding: 6.5rem 0 4.5rem;
     }
 
     .swiper-container {
-      padding: 1.5rem 1.5rem 7rem 1.5rem;
-
       .swiper-slide {
-        padding: 4rem 3.5rem;
-
         .swiper-content {
           gap: 4rem;
 
-          &__details {
-            img {
-              height: unset;
-            }
-          }
-
           p {
-            font-size: 1.125rem;
-          }
-
-          .swiper__slide-cliente {
-            img {
-              height: 70px;
-            }
-
-            div {
-              span {
-                font-size: 1.5rem;
-              }
-
-              span:last-child {
-                font-size: 1.125rem;
-              }
-            }
+            font-size: 2.25rem;
           }
         }
       }
@@ -195,14 +122,8 @@ import Detail from "./Detail.astro";
   }
 
   :root {
-    --swiper-pagination-color: var(--blue-primary);
-    --swiper-pagination-bullet-size: 10px;
-    --swiper-pagination-bullet-width: 10px;
-    --swiper-pagination-bullet-height: 10px;
-    --swiper-pagination-bullet-inactive-color: #7e7e7e;
-    --swiper-pagination-bullet-opacity: 1;
-    --swiper-pagination-bullet-horizontal-gap: 4px;
-    --swiper-pagination-bullet-vertical-gap: 6px;
+    --swiper-navigation-color: #fac3b9;
+    --swiper-navigation-size: 40px;
   }
 </style>
 
@@ -215,9 +136,9 @@ import Detail from "./Detail.astro";
     loop: true,
     slidesPerView: 1,
     spaceBetween: 50,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
   });
 </script>

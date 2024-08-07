@@ -26,6 +26,11 @@ import Layout from "../layouts/Layout.astro";
   <Depoimentos />
   <ContactForm />
   <Footer />
+  <div class="float-icons">
+    <button onclick="topFunction()" id="topBtn" aria-label="Back to top">
+      <img src="/icons/arrow-up.svg" alt="" />
+    </button>
+  </div>
 </main>
 
 <style lang="scss">
@@ -48,9 +53,59 @@ import Layout from "../layouts/Layout.astro";
     padding-bottom: 5rem;
   }
 
+  .float-icons {
+    position: fixed;
+    bottom: 2rem;
+    right: 1rem;
+    z-index: 2;
+
+    button {
+      width: 66px;
+      height: 66px;
+      border: none;
+      border-radius: 1.25rem;
+      cursor: pointer;
+      box-shadow: 0px 4px 8px #00000033;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: var(--accent-orange);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s;
+    }
+  }
+
   @media screen and (min-width: 800px) {
     .services-wrapper {
       padding-bottom: 7rem;
     }
   }
 </style>
+
+<script>
+  const topBtn = document.getElementById("topBtn");
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 200 ||
+      document.documentElement.scrollTop > 200
+    ) {
+      topBtn.style.opacity = "1";
+      topBtn.style.pointerEvents = "auto";
+    } else {
+      topBtn.style.opacity = "0";
+      topBtn.style.pointerEvents = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  window.onscroll = function () {
+    scrollFunction();
+  };
+  topBtn.addEventListener("click", topFunction);
+</script>

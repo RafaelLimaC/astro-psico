@@ -7,7 +7,7 @@ import Detail from "./Detail.astro";
   <div class="swiper swiper-container">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <div class="swiper-content">
+        <div class="swiper-content first">
           <img src="/aspas-swiper.svg" alt="Aspas" />
           <p>
             A Samantha é uma profissional incrível, que soube conduzir os testes
@@ -52,7 +52,7 @@ import Detail from "./Detail.astro";
         </div>
       </div>
       <div class="swiper-slide">
-        <div class="swiper-content">
+        <div class="swiper-content first">
           <img src="/aspas-swiper.svg" alt="Aspas" />
           <p>
             As consultas foram essenciais na minha vida, principalmente por ser
@@ -68,7 +68,7 @@ import Detail from "./Detail.astro";
         </div>
       </div>
       <div class="swiper-slide">
-        <div class="swiper-content">
+        <div class="swiper-content first">
           <img src="/aspas-swiper.svg" alt="Aspas" />
           <p>
             Atendimento perfeito, desde a primeira vez fez com que eu me
@@ -84,7 +84,7 @@ import Detail from "./Detail.astro";
         </div>
       </div>
       <div class="swiper-slide">
-        <div class="swiper-content">
+        <div class="swiper-content first">
           <img src="/aspas-swiper.svg" alt="Aspas" />
           <p>
             Tenho profundo carinho pela memória das minha sessões com Samantha.
@@ -118,6 +118,10 @@ import Detail from "./Detail.astro";
     padding: 1rem 2.5rem;
     width: 100%;
     max-width: 76.25rem;
+  }
+
+  .swiper-wrapper {
+    align-items: center;
   }
 
   .swiper-slide {
@@ -165,6 +169,18 @@ import Detail from "./Detail.astro";
           color: var(--color-dark);
         }
       }
+
+      &.first {
+        p {
+          font-size: 1rem;
+          font-weight: 400;
+          line-height: 1.25;
+          color: var(--accent-blue);
+          text-align: center;
+          max-width: 45ch;
+          font-family: var(--ff-roboto-slab);
+        }
+      }
     }
   }
 
@@ -180,6 +196,12 @@ import Detail from "./Detail.astro";
 
           p {
             font-size: 2.25rem;
+          }
+
+          &.first {
+            p {
+              font-size: 1.5rem;
+            }
           }
         }
       }

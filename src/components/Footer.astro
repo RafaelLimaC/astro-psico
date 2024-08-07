@@ -3,22 +3,165 @@
 ---
 
 <footer>
-  <div class="footer-wrapper">
-    <div></div>
+  <div class="footer">
+    <div class="footer-info">
+      <img src="/logo-footer.svg" alt="Samantha Dutra" />
+      <p>
+        Atendimentos de Avaliação Neuropsicológica para crianças, adolescentes,
+        adultos e idosos, e atuo como Psicoterapeuta pela perspectiva
+        Fenomenológico-Existencial de maneira particular.
+      </p>
+      <div>
+        <a href="">
+          <img src="/icons/facebook-white.svg" alt="Perfil Facebook" />
+        </a>
+        <a href="">
+          <img src="/icons/instagram-white.svg" alt="Perfil Instagram" />
+        </a>
+        <a href="">
+          <img src="/icons/linkedin-white.svg" alt="Perfil LinkedIn" />
+        </a>
+      </div>
+    </div>
+    <ul class="footer-nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#serviços">Serviços</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <div class="footer-address">
+      <span>
+        <strong>Consultório Particular</strong>
+        <br />Av. Nossa Sra. da Glória, 2987- Sala 402 - Cavaleiros, Macaé
+      </span>
+      <span>
+        Ligue para <strong>(22) 99948-1160</strong>
+      </span>
+      <span>
+        <strong>Vitall Centro de Medicina Integrativa</strong>
+        <br />Av. das Américas 3434 - Sala 412- Barra da Tijuca, Rio de Janeiro
+        Centro Empresarial Mário Henrique Simonsen
+      </span>
+      <span>
+        Ligue para <strong>(21) 99913-1898</strong>
+      </span>
+    </div>
   </div>
-  <div class="rights"></div>
+  <div class="rights">
+    <p>Samantha Dutra Santos © 2024. Todos os direitos reservados.</p>
+  </div>
 </footer>
 
 <style lang="scss">
   footer {
     background-color: var(--accent-blue);
+    overflow: hidden;
   }
 
-  .footer-wrapper {
+  .footer {
     max-width: 76.25rem; //1220px
     width: 100%;
 
     margin: 0 auto;
-    padding: 4.375rem 1rem 2.5rem;
+    padding: 3rem 1rem 4.5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    color: white;
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+
+      img {
+        width: 310px;
+      }
+
+      p {
+        max-width: 380px;
+        line-height: 1.8;
+      }
+
+      div {
+        display: flex;
+        gap: 0.75rem;
+
+        img {
+          width: 38px;
+        }
+      }
+    }
+
+    &-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 2rem 0;
+
+      li {
+        a {
+          color: white;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &-address {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      max-width: 400px;
+
+      span {
+        font-size: 0.875rem;
+        line-height: 1.3;
+
+        &:nth-child(2) {
+          margin-bottom: 1rem;
+        }
+
+        strong {
+          font-weight: 700;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .rights {
+    padding: 1.5rem 1rem;
+    background-color: var(--color-blue);
+
+    p {
+      color: white;
+      text-align: center;
+      font-size: 0.875rem;
+      max-width: 30ch;
+      margin: 0 auto;
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    .footer {
+      padding: 4.375rem 1rem 2.5rem;
+      flex-direction: row;
+      justify-content: space-between;
+
+      &-info {
+        img {
+          width: 353px;
+        }
+      }
+    }
+
+    .rights {
+      p {
+        font-size: 1rem;
+        max-width: 70ch;
+      }
+    }
   }
 </style>
